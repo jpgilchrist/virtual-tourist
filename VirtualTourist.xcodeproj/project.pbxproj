@@ -14,6 +14,9 @@
 		FB6B6C701B0B47F50059960A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6B6C6F1B0B47F50059960A /* Images.xcassets */; };
 		FB6B6C731B0B47F50059960A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B6C711B0B47F50059960A /* LaunchScreen.xib */; };
 		FB6B6C7F1B0B47F50059960A /* VirtualTouristTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B6C7E1B0B47F50059960A /* VirtualTouristTests.swift */; };
+		FB6B6C891B0B53050059960A /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B6C881B0B53050059960A /* CoreDataStackManager.swift */; };
+		FB6B6C8B1B0B53C10059960A /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B6C8A1B0B53C10059960A /* FlickrClient.swift */; };
+		FB6B6C8D1B0B55880059960A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6B6C8C1B0B55880059960A /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		FB6B6C781B0B47F50059960A /* VirtualTouristTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualTouristTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6B6C7D1B0B47F50059960A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6B6C7E1B0B47F50059960A /* VirtualTouristTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTouristTests.swift; sourceTree = "<group>"; };
+		FB6B6C881B0B53050059960A /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		FB6B6C8A1B0B53C10059960A /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
+		FB6B6C8C1B0B55880059960A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6B6C8D1B0B55880059960A /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,7 @@
 		FB6B6C571B0B47F50059960A = {
 			isa = PBXGroup;
 			children = (
+				FB6B6C8C1B0B55880059960A /* Alamofire.framework */,
 				FB6B6C621B0B47F50059960A /* VirtualTourist */,
 				FB6B6C7B1B0B47F50059960A /* VirtualTouristTests */,
 				FB6B6C611B0B47F50059960A /* Products */,
@@ -80,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				FB6B6C651B0B47F50059960A /* AppDelegate.swift */,
+				FB6B6C881B0B53050059960A /* CoreDataStackManager.swift */,
+				FB6B6C8A1B0B53C10059960A /* FlickrClient.swift */,
 				FB6B6C6A1B0B47F50059960A /* ViewController.swift */,
 				FB6B6C6C1B0B47F50059960A /* Main.storyboard */,
 				FB6B6C6F1B0B47F50059960A /* Images.xcassets */,
@@ -125,6 +135,7 @@
 				FB6B6C5C1B0B47F50059960A /* Sources */,
 				FB6B6C5D1B0B47F50059960A /* Frameworks */,
 				FB6B6C5E1B0B47F50059960A /* Resources */,
+				FB6B6C8E1B0B55980059960A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -210,12 +221,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FB6B6C8E1B0B55980059960A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB6B6C5C1B0B47F50059960A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FB6B6C6B1B0B47F50059960A /* ViewController.swift in Sources */,
+				FB6B6C8B1B0B53C10059960A /* FlickrClient.swift in Sources */,
+				FB6B6C891B0B53050059960A /* CoreDataStackManager.swift in Sources */,
 				FB6B6C691B0B47F50059960A /* VirtualTourist.xcdatamodeld in Sources */,
 				FB6B6C661B0B47F50059960A /* AppDelegate.swift in Sources */,
 			);
@@ -344,6 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VirtualTourist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +388,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VirtualTourist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
